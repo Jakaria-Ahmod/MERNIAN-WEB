@@ -1,7 +1,20 @@
 import React from 'react';
+import Menubar from './components/menubar';
+import CartAndNotifiacation from './components/cartAndNotiafication';
+import SharchBar from './components/sharchBar';
 
 const HederComponets = () => {
-  return <div>HederComponets</div>;
+  return (
+    <header>
+      <nav>
+        <div className="bg-colorOne flex justify-between gap-x-[73px] py-[20px] px-[24px] items-center font-poppins">
+          <Menubar></Menubar>
+          <SharchBar></SharchBar>
+          <CartAndNotifiacation></CartAndNotifiacation>
+        </div>
+      </nav>
+    </header>
+  );
 };
 
 export default HederComponets;
