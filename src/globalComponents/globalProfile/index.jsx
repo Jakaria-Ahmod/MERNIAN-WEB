@@ -8,7 +8,7 @@ import DeshbordMenu from './components/deshbordMenu';
 const UserProfile = () => {
   return (
     <div>
-      <section className="bg-white shadow shadow-2xl w-[300px] h-screen">
+      <section className="bg-white mt-[92px] fixed shadow-2xl w-[300px] h-screen">
         <div className="p-[15px]">
           <div className="w-[110px] mx-auto h-[110px] bg-colorFour rounded-full overflow-hidden">
             <img

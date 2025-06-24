@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const MenuBarLayoutLeft = () => {
   return (
     <div>
-      <Link to="/profile/profile">
+      <Link to="/">
         <img src={LogoImg} alt="logo" />
       </Link>
     </div>

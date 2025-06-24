@@ -7,7 +7,7 @@ const HederComponets = () => {
   return (
     <header>
       <nav>
-        <div className="bg-colorOne flex justify-between gap-x-[73px] py-[20px] px-[24px] items-center font-poppins">
+        <div className="bg-colorOne fixed z-[99999] top-0 left-0 w-full flex justify-between gap-x-[73px] py-[20px] px-[24px] items-center font-poppins">
           <Menubar></Menubar>
           <SharchBar></SharchBar>
           <CartAndNotifiacation></CartAndNotifiacation>

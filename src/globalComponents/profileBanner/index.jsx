@@ -11,7 +11,7 @@ import coding from '../../assets/img/coding.jpg';
 const ProfileBanner = () => {
   return (
     <div>
-      <div className="w-[1185px] h-[425px] shadow my-[32px] rounded-md overflow-hidden">
+      <div className="w-[1185px]  h-[425px] shadow my-[32px] rounded-md overflow-hidden">
         <div className="w-full h-[300px] bg-colorFour cursor-pointer">
           <img src={coding} alt="" className="w-full h-full object-cover" />
         </div>
