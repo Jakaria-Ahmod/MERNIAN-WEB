@@ -1,4 +1,4 @@
-import MenuBarLayoutLeft from './MenuBarLayout/MenuBarLayoutLeft.';
+import MenuBarLayoutLeft from './menubarLayout/menubarLayoutLeft.jsx';
 import MenuBarLayoutRight from './MenuBarLayout/MenuBarLayoutRight.jsx';
 
 const Menubar = () => {
