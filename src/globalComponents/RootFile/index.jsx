@@ -1,5 +1,5 @@
 import React from 'react';
-import HederComponets from '../../comonLayout/header';
+import HederComponets from '../../commonLayout/header';
 import { Outlet } from 'react-router';
 
 const RooteFile = () => {
