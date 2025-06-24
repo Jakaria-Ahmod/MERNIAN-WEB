@@ -1,7 +1,8 @@
 import React from 'react';
+
+import { Outlet } from 'react-router';
 import UserProfile from '../../globalComponents/globalProfile';
 import AllUserPhoto from '../../globalComponents/allUserPhoto';
-import { Outlet } from 'react-router';
 
 const PublicProfile = () => {
   return (

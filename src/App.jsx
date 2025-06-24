@@ -2,6 +2,7 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import RooteFile from './globalComponents/RootFile';
 import PublicProfile from './pages/Home';
+import HomePage from './pages/Home/Main';
 
 function App() {
   const router = createBrowserRouter([
@@ -22,7 +23,7 @@ function App() {
                 },
                 {
                   path: 'profile',
-                  element: <div>i am Profile </div>,
+                  element: <HomePage></HomePage>,
                 },
                 {
                   path: 'groups',
