@@ -4,6 +4,7 @@ import RooteFile from './globalComponents/RootFile';
 import PublicProfile from './pages/Home';
 import HomePage from './pages/Home/Main';
 import NewsFeed from './pages/newsfeed';
+import Fridends from './pages/Friends';
 
 function App() {
   const router = createBrowserRouter([
@@ -37,7 +38,7 @@ function App() {
             },
             {
               path: 'profile/friends',
-              element: <div>i am Friends</div>,
+              element: <Fridends></Fridends>,
             },
             {
               path: 'profile/friendsRequest',
