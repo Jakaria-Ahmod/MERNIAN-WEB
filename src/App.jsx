@@ -6,6 +6,7 @@ import HomePage from './pages/Home/Main';
 import NewsFeed from './pages/newsfeed';
 import Fridends from './pages/Friends';
 import AboutPage from './pages/about';
+import Store from './pages/store';
 
 function App() {
   const router = createBrowserRouter([
@@ -48,6 +49,10 @@ function App() {
             {
               path: 'profile/friendsRequest',
               element: <div>i am Friends Request</div>,
+            },
+            {
+              path: 'profile/store',
+              element: <Store></Store>,
             },
             {
               path: 'profile/logout',

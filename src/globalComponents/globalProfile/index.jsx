@@ -8,7 +8,7 @@ import DeshbordMenu from './components/deshbordMenu';
 const UserProfile = () => {
   return (
     <div>
-      <section className="bg-white mt-[92px] fixed shadow-2xl w-[300px] h-screen">
+      <section className="bg-white mt-[92px] fixed shadow-2xl w-[300px] h-[calc(100vh-92px)] overflow-y-auto">
         <div className="p-[15px]">
           <div className="w-[110px] mx-auto h-[110px] bg-colorFour rounded-full overflow-hidden">
             <img
@@ -28,10 +28,12 @@ const UserProfile = () => {
             </Link>
           </div>
         </div>
+
+        {/* এই অংশগুলো ইউজার প্রোফাইল স্ক্রল এর মধ্যে থাকবে */}
         <div>
-          <FriendsAndPostCount></FriendsAndPostCount>
+          <FriendsAndPostCount />
         </div>
-        <DeshbordMenu></DeshbordMenu>
+        <DeshbordMenu />
       </section>
     </div>
   );
