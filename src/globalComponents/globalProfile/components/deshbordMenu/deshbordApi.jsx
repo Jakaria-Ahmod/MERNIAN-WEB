@@ -43,6 +43,12 @@ export const DeshbordMenuData = [
     to: '/profile/friendsRequest',
   },
   {
+    id: 6,
+    icon: <IoGitPullRequest />,
+    title: 'About Me',
+    to: '/profile/about',
+  },
+  {
     id: 7,
     icon: <TbLogout />,
     title: 'Logout',

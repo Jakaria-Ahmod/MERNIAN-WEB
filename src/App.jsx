@@ -5,6 +5,7 @@ import PublicProfile from './pages/Home';
 import HomePage from './pages/Home/Main';
 import NewsFeed from './pages/newsfeed';
 import Fridends from './pages/Friends';
+import AboutPage from './pages/about';
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,10 @@ function App() {
             {
               path: 'profile/newsfeed',
               element: <NewsFeed></NewsFeed>,
+            },
+            {
+              path: 'profile/about',
+              element: <AboutPage></AboutPage>,
             },
             {
               path: 'profile/profile',

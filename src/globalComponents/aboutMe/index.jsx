@@ -20,7 +20,7 @@ const AboutMeComponets = () => {
       </div>
       <div>
         <div className="flex gap-x-4 mt-[18px]">
-          <strong className="text-colorSveven text-[12px] font-poppins font-normal">
+          <strong className="text-colorSveven text-[12px] font-poppins font-bold">
             Joined:
           </strong>
           <span className="text-colorSveven text-[12px] font-poppins font-normal">
@@ -28,7 +28,7 @@ const AboutMeComponets = () => {
           </span>
         </div>
         <div className="flex gap-x-4 mt-[18px]">
-          <strong className="text-colorSveven text-[12px] font-poppins font-normal">
+          <strong className="text-colorSveven text-[12px] font-poppins font-bold">
             City:
           </strong>
           <span className="text-colorSveven text-[12px] font-poppins font-normal">
@@ -36,7 +36,7 @@ const AboutMeComponets = () => {
           </span>
         </div>
         <div className="flex gap-x-4 mt-[18px]">
-          <strong className="text-colorSveven text-[12px] font-poppins font-normal">
+          <strong className="text-colorSveven text-[12px] font-poppins font-bold">
             Age:
           </strong>
           <span className="text-colorSveven text-[12px] font-poppins font-normal">
