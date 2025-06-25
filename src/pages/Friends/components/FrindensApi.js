@@ -1,11 +1,19 @@
 export const friends = [
   {
+    name: 'md jakaria ahmod',
+    email: 'jakariaahmodmd@gmail.com',
+    friends: '930',
+    posts: '87',
+    followers: '1.2k',
+  },
+  {
     name: 'Tanvir Ahmed',
     email: 'tanvir@gmail.com',
     friends: '930',
     posts: '87',
     followers: '1.2k',
   },
+
   {
     name: 'Nayeem Hasan',
     email: 'nayeem@gmail.com',
