@@ -1,6 +1,6 @@
 import React from 'react';
 import ProfileBanner from '../../globalComponents/profileBanner';
-import AllFriends from './components/allFriends';
+import AllFriends from './components/AllFriends';
 
 const Fridends = () => {
   return (
