@@ -8,6 +8,7 @@ import Fridends from './pages/Friends';
 import AboutPage from './pages/about';
 import Store from './pages/store';
 import Prodact from './pages/prodact';
+import Card from './pages/cart';
 
 function App() {
   const router = createBrowserRouter([
@@ -62,6 +63,10 @@ function App() {
             {
               path: 'profile/product',
               element: <Prodact></Prodact>,
+            },
+            {
+              path: 'profile/cart',
+              element: <Card></Card>,
             },
           ],
         },

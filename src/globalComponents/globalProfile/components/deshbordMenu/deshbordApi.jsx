@@ -1,5 +1,11 @@
 import React from 'react';
-import { FaAlgolia, FaLayerGroup, FaNewspaper, FaStore } from 'react-icons/fa';
+import {
+  FaAlgolia,
+  FaLayerGroup,
+  FaNewspaper,
+  FaShoppingCart,
+  FaStore,
+} from 'react-icons/fa';
 import ProfileSvg from '../../../../assets/svg';
 import { LiaUserFriendsSolid } from 'react-icons/lia';
 import { IoGitPullRequest } from 'react-icons/io5';
@@ -66,6 +72,12 @@ export const DeshbordMenuData = [
   },
   {
     id: 10,
+    icon: <FaShoppingCart />,
+    title: 'cart',
+    to: '/profile/cart',
+  },
+  {
+    id: 11,
     icon: <TbLogout />,
     title: 'Logout',
     to: '/profile/logout',
