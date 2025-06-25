@@ -23,7 +23,7 @@ const Prodact = () => {
   );
 
   return (
-    <div className="mb-[100px]">
+    <div className="mb-[100px] w-[1185px]">
       <StoreBanner />
       <ProductPrice searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       <div className="flex gap-x-[14px] mt-[20px]">
