@@ -16,7 +16,6 @@ const AllFriends = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const friendsPerPage = 8;
 
-  // সার্চ টার্ম অনুযায়ী ফিল্টার
   const filteredFriends = friends.filter(friend => {
     const lowerTerm = searchTerm.toLowerCase();
     return (
@@ -25,7 +24,6 @@ const AllFriends = () => {
     );
   });
 
-  // Pagination এর জন্য
   const totalPages = Math.ceil(filteredFriends.length / friendsPerPage);
   const indexOfLastFriend = currentPage * friendsPerPage;
   const indexOfFirstFriend = indexOfLastFriend - friendsPerPage;
@@ -33,15 +31,11 @@ const AllFriends = () => {
     indexOfFirstFriend,
     indexOfLastFriend
   );
-
-  // পেজ চেঞ্জ ফাংশন
   const handlePageChange = pageNumber => {
     if (pageNumber < 1) pageNumber = 1;
     else if (pageNumber > totalPages) pageNumber = totalPages;
     setCurrentPage(pageNumber);
   };
-
-  // সার্চ ইনপুট পরিবর্তনের সময় পেজ ১ এ নামানো (যখন সার্চ করে)
   const handleSearchChange = e => {
     setSearchTerm(e.target.value);
     setCurrentPage(1);

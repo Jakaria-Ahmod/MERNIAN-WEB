@@ -31,15 +31,19 @@ const Categories = () => {
   return (
     <div>
       {/* Categories */}
-      <div className="px-6 py-4 border-b border-[#d9d9d9]">
-        <h2 className="text-black font-semibold mb-3">Categories</h2>
-        <div className="flex flex-wrap gap-4">
+      <div className="px-6 py-4">
+        <h2 className="text-black mt-[22px] mb-[23px] font-poppins text-sm font-bold cursor-pointer hover:text-[#615dfa]">
+          Categories
+        </h2>
+        <div className="flex flex-wrap gap-x-[15px] gap-4 bg-white p-[14px] rounded-md">
           {categories.map((category, index) => (
             <button
               key={index}
-              className="text-[#3e3f5e] hover:text-[#615dfa] text-sm font-medium transition-colors"
+              className="text-[#3e3f5e] text-sm font-medium transition-colors"
             >
-              {category}
+              <span className="text-black font-poppins text-sm font-medium cursor-pointer hover:text-[#615dfa]">
+                {category}
+              </span>
             </button>
           ))}
         </div>

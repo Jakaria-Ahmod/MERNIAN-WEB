@@ -7,6 +7,7 @@ import NewsFeed from './pages/newsfeed';
 import Fridends from './pages/Friends';
 import AboutPage from './pages/about';
 import Store from './pages/store';
+import Prodact from './pages/prodact';
 
 function App() {
   const router = createBrowserRouter([
@@ -57,6 +58,10 @@ function App() {
             {
               path: 'profile/logout',
               element: <div>i am Friends Logout</div>,
+            },
+            {
+              path: 'profile/product',
+              element: <Prodact></Prodact>,
             },
           ],
         },

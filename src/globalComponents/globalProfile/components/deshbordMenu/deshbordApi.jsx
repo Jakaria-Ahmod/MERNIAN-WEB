@@ -1,9 +1,13 @@
 import React from 'react';
-import { FaAlgolia, FaLayerGroup, FaNewspaper } from 'react-icons/fa';
+import { FaAlgolia, FaLayerGroup, FaNewspaper, FaStore } from 'react-icons/fa';
 import ProfileSvg from '../../../../assets/svg';
 import { LiaUserFriendsSolid } from 'react-icons/lia';
 import { IoGitPullRequest } from 'react-icons/io5';
 import { TbLogout } from 'react-icons/tb';
+import {
+  MdOutlineRoundaboutRight,
+  MdProductionQuantityLimits,
+} from 'react-icons/md';
 
 export const DeshbordMenuData = [
   {
@@ -44,18 +48,24 @@ export const DeshbordMenuData = [
   },
   {
     id: 7,
-    icon: <IoGitPullRequest />,
+    icon: <MdOutlineRoundaboutRight />,
     title: 'About Me',
     to: '/profile/about',
   },
   {
     id: 8,
-    icon: <IoGitPullRequest />,
+    icon: <FaStore />,
     title: 'store',
     to: '/profile/store',
   },
   {
     id: 9,
+    icon: <MdProductionQuantityLimits />,
+    title: 'product',
+    to: '/profile/product',
+  },
+  {
+    id: 10,
     icon: <TbLogout />,
     title: 'Logout',
     to: '/profile/logout',

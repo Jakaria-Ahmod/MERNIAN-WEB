@@ -29,10 +29,10 @@ const ProductCard = ({ price, img, title, category }) => {
                 </button>
               </div>
               <div className="flex">
-                <button className="flex-1 font-poppins text-[13px] font-semibold bg-[#615dfa] hover:bg-[#615dfa]/90 text-white text-sm py-2">
+                <button className="flex-1 font-poppins text-[13px] font-semibold bg-[#615dfa] hover:bg-[#615dfa]/90 text-white text-sm py-2 cursor-pointer">
                   Add To Cart
                 </button>
-                <button className="flex-1 font-poppins text-[13px] font-semibold bg-[#23d2e2] hover:bg-[#23d2e2]/90 text-white text-sm py-2">
+                <button className="flex-1 font-poppins text-[13px] font-semibold bg-[#23d2e2] hover:bg-[#23d2e2]/90 text-white text-sm py-2 cursor-pointer">
                   Wishlist
                 </button>
               </div>
