@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 import RooteFile from './globalComponents/RootFile';
 import PublicProfile from './pages/Home';
 import HomePage from './pages/Home/Main';
+import NewsFeed from './pages/newsfeed';
 
 function App() {
   const router = createBrowserRouter([
@@ -20,7 +21,7 @@ function App() {
             },
             {
               path: 'profile/newsfeed',
-              element: <div>i am Newsfeed</div>,
+              element: <NewsFeed></NewsFeed>,
             },
             {
               path: 'profile/profile',

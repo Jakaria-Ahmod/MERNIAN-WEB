@@ -8,7 +8,7 @@ import PostCart from '../../globalComponents/postCart';
 const HomePage = () => {
   return (
     <div>
-      <div className="mb-[20px] mt-[150px]">
+      <div className="mb-[20px]">
         <ProfileBanner></ProfileBanner>
         <div className="flex gap-x-[15px]">
           <div>
