@@ -1,6 +1,7 @@
 import React from 'react';
 import StoreBanner from '../../globalComponents/storeBanner';
 import { ChevronUp, ChevronDown, Trash2 } from 'lucide-react';
+import { Link } from 'react-router';
 
 const Card = () => {
   const data = [1, 2, 3];
@@ -154,9 +155,11 @@ const Card = () => {
                   </div>
                 </div>
                 <div className="mt-[53px]">
-                  <button className="w-[228px] py-[15px] px-[45px] bg-[#23D2E2] text-white font-poppins text-[12px] font-medium rounded-[15px] cursor-pointer">
-                    Proccecd to checkout
-                  </button>
+                  <Link to="/profile/checkout">
+                    <button className="w-[228px] py-[15px] px-[45px] bg-[#23D2E2] text-white font-poppins text-[12px] font-medium rounded-[15px] cursor-pointer">
+                      Proccecd to checkout
+                    </button>
+                  </Link>
                   <button className="mb-[52px] w-[228px] mt-[10px] py-[15px] px-[45px] bg-white text-[#AFB0C0] border border-borderColor font-poppins text-[12px] font-medium rounded-[15px] cursor-pointer">
                     Update cart
                   </button>

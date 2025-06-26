@@ -1,9 +1,11 @@
 import React from 'react';
 
-const ComonButoon = ({ children, className }) => {
+const ComonButoon = ({ children, className, onClick }) => {
   return (
     <div>
-      <button className={className}>{children}</button>
+      <button onClick={onClick} className={className}>
+        {children}
+      </button>
     </div>
   );
 };

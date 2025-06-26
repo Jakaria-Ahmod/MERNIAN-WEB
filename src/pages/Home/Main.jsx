@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use, useState } from 'react';
 import ProfileBanner from '../../globalComponents/profileBanner';
 import AboutMeComponets from '../../globalComponents/aboutMe';
 import PhotoGallary from '../../globalComponents/photoGallary';
@@ -6,6 +6,41 @@ import VideoGrallary from '../../globalComponents/videoGrallary';
 import PostCart from '../../globalComponents/postCart';
 
 const HomePage = () => {
+  const [mainPost, setMainPost] = useState([
+    {
+      post: 'jakaria',
+      video: '',
+      comment: '',
+      comments: 2,
+      commentsList: [],
+      selectedReaction: '',
+      reactionCount: 0,
+      showCommentBox: false,
+      showReactions: false,
+    },
+    {
+      post: 'Ahmod',
+      video: '',
+      comment: '',
+      comments: 2,
+      commentsList: [],
+      selectedReaction: '',
+      reactionCount: 0,
+      showCommentBox: false,
+      showReactions: false,
+    },
+    {
+      post: 'Bishal',
+      video: '',
+      comment: '',
+      comments: 2,
+      commentsList: [],
+      selectedReaction: '',
+      reactionCount: 0,
+      showCommentBox: false,
+      showReactions: false,
+    },
+  ]);
   return (
     <div>
       <div className="mb-[20px]">
@@ -17,7 +52,7 @@ const HomePage = () => {
             <VideoGrallary></VideoGrallary>
           </div>
           <div>
-            <PostCart></PostCart>
+            <PostCart mainPost={mainPost} setMainPost={setMainPost}></PostCart>
           </div>
         </div>
       </div>

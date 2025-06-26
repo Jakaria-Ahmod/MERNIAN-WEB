@@ -5,14 +5,27 @@ import { FaCamera, FaLayerGroup, FaPhotoVideo } from 'react-icons/fa';
 import ComonButoon from '../../../../globalComponents/ComonButton';
 import ProductUploadForm from '../ProductUpload';
 
-const Status = () => {
+const Status = ({ mainPost, setMainPost }) => {
   const [status, setStaus] = useState(false);
+  const [post, setPost] = useState('');
+
   const handleStatus = () => {
     setStaus(true);
   };
   const handleProduct = () => {
     setStaus(false);
   };
+
+  const handlePost = () => {
+    if (!post) return;
+
+    const mainPostData = {
+      post,
+    };
+    setMainPost(p => [...p, mainPostData]);
+    // console.log(mainPost);
+  };
+
   return (
     <div>
       <div className="min-w-[585px] min-h-[303px] shadow-2xl">
@@ -46,6 +59,8 @@ const Status = () => {
               <textarea
                 placeholder="Hi, A B M Shawon Islam, Share your post ..."
                 className="resize-none h-[150px] w-full border-none outline-none p-[25px]"
+                name="Post"
+                onChange={e => setPost(e.target.value)}
               ></textarea>
             </div>
             <div className="flex justify-between items-center p-[28px]">
@@ -61,7 +76,10 @@ const Status = () => {
                 <ComonButoon className="bg-black py-[12px] px-[38px] text-white font-poppins font-semibold rounded-[7px] cursor-pointer">
                   Discard
                 </ComonButoon>
-                <ComonButoon className="bg-colorSix py-[12px] px-[47px] text-white font-poppins font-semibold rounded-[7px] cursor-pointer">
+                <ComonButoon
+                  onClick={handlePost}
+                  className="bg-colorSix py-[12px] px-[47px] text-white font-poppins font-semibold rounded-[7px] cursor-pointer"
+                >
                   Post
                 </ComonButoon>
               </div>

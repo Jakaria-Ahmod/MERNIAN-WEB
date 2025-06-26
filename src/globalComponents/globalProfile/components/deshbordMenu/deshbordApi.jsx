@@ -3,6 +3,7 @@ import {
   FaAlgolia,
   FaLayerGroup,
   FaNewspaper,
+  FaRegMoneyBillAlt,
   FaShoppingCart,
   FaStore,
 } from 'react-icons/fa';
@@ -78,6 +79,12 @@ export const DeshbordMenuData = [
   },
   {
     id: 11,
+    icon: <FaRegMoneyBillAlt />,
+    title: 'Checkout',
+    to: '/profile/checkout',
+  },
+  {
+    id: 12,
     icon: <TbLogout />,
     title: 'Logout',
     to: '/profile/logout',

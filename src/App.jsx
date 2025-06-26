@@ -9,6 +9,7 @@ import AboutPage from './pages/about';
 import Store from './pages/store';
 import Prodact from './pages/prodact';
 import Card from './pages/cart';
+import CheckOut from './pages/checkout';
 
 function App() {
   const router = createBrowserRouter([
@@ -67,6 +68,10 @@ function App() {
             {
               path: 'profile/cart',
               element: <Card></Card>,
+            },
+            {
+              path: 'profile/checkout',
+              element: <CheckOut></CheckOut>,
             },
           ],
         },
