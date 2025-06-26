@@ -5,7 +5,12 @@ import { FaCamera, FaLayerGroup, FaPhotoVideo } from 'react-icons/fa';
 import ComonButoon from '../../../../globalComponents/ComonButton';
 import ProductUploadForm from '../ProductUpload';
 
-const Status = ({ mainPost, setMainPost }) => {
+const Status = ({
+  mainPost,
+  setMainPost,
+  allSubmittedData,
+  setAllSubmittedData,
+}) => {
   const [status, setStaus] = useState(false);
   const [post, setPost] = useState('');
 
@@ -86,7 +91,10 @@ const Status = ({ mainPost, setMainPost }) => {
             </div>
           </div>
         ) : (
-          <ProductUploadForm></ProductUploadForm>
+          <ProductUploadForm
+            allSubmittedData={allSubmittedData}
+            setAllSubmittedData={setAllSubmittedData}
+          ></ProductUploadForm>
         )}
       </div>
     </div>

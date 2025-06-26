@@ -10,8 +10,8 @@ const Prodact = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  const filteredProducts = products.filter(product =>
-    product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredProducts = products.filter(item =>
+    item.name?.toLowerCase().includes.toLowerCase()
   );
 
   // 📄 Pagination Logic
@@ -30,13 +30,15 @@ const Prodact = () => {
         <Categores />
         <div className="flex-1">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {currentItems.map((item, index) => (
+            {products.map((item, index) => (
               <ProductCard
                 key={index}
                 img={item.img}
                 price={item.price}
                 category={item.category}
                 title={item.title}
+                description={item?.description}
+                index={index}
               />
             ))}
           </div>

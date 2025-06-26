@@ -1,6 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-const ProductCard = ({ price, img, title, category }) => {
+const ProductCard = ({ price, img, title, category, description, index }) => {
+  const handleClick = index => {
+    console.log('clicked', index);
+  };
   return (
     <div>
       <div className="px-6 py-6">
@@ -15,8 +19,13 @@ const ProductCard = ({ price, img, title, category }) => {
               </div>
 
               <div className="p-4">
-                <h3 className="font-bold text-black text-base font-poppins mb-2 line-clamp-2">
-                  {title}
+                <h3
+                  className="font-bold text-black text-base font-poppins mb-2 line-clamp-2"
+                  onClick={() => handleClick(index)}
+                >
+                  <Link to={`/profile/productDetails/${index}`}>
+                    {description}
+                  </Link>
                 </h3>
 
                 <div className="flex items-center gap-2 mb-3">

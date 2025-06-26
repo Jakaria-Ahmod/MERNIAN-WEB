@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { GoPlus } from 'react-icons/go';
 import { RiDeleteBinLine } from 'react-icons/ri';
-import { Link } from 'react-router';
+import { products } from '../../../store/components/store';
 
 export default function ProductUploadForm() {
   const [features, setFeatures] = useState([
@@ -11,6 +11,19 @@ export default function ProductUploadForm() {
     { id: 2, name: '', value: '' },
     { id: 3, name: '', value: '' },
   ]);
+
+  const [formData, setFormData] = useState({
+    productName: '',
+    price: '',
+    category: '',
+    color: '',
+    size: '',
+    quantity: '',
+    description: '',
+  });
+
+  const [errors, setErrors] = useState({});
+  const [allSubmittedData, setAllSubmittedData] = useState([]);
 
   const addFeature = () => {
     const newId = Math.max(...features.map(f => f.id)) + 1;
@@ -29,98 +42,215 @@ export default function ProductUploadForm() {
     );
   };
 
+  const handleSubmit = () => {
+    const newErrors = {};
+    const { productName, price, category, color, size, quantity, description } =
+      formData;
+
+    if (!productName) newErrors.productName = 'Product name is required';
+    if (!price) newErrors.price = 'Price is required';
+    if (!category) newErrors.category = 'Category is required';
+    if (!color) newErrors.color = 'Color is required';
+    if (!size) newErrors.size = 'Size is required';
+    if (!quantity) newErrors.quantity = 'Quantity is required';
+    if (!description) newErrors.description = 'Description is required';
+
+    const incompleteFeature = features.find(
+      f => !f.name.trim() || !f.value.trim()
+    );
+    if (incompleteFeature)
+      newErrors.features = 'All feature name & value fields are required';
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    const submitted = {
+      ...formData,
+      features: [...features],
+      submittedAt: new Date().toISOString(),
+    };
+
+    products.push(submitted);
+    setAllSubmittedData(prev => [...prev, submitted]);
+
+    alert('✅ Product added successfully!');
+
+    setFormData({
+      productName: '',
+      price: '',
+      category: '',
+      color: '',
+      size: '',
+      quantity: '',
+      description: '',
+    });
+
+    setFeatures([
+      { id: 1, name: '', value: '' },
+      { id: 2, name: '', value: '' },
+      { id: 3, name: '', value: '' },
+    ]);
+    setErrors({});
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Form Content */}
-      <div className="p-6 max-w-4xl mx-auto ">
-        {/* Form Fields */}
+    <div className="bg-gray-50 min-h-screen">
+      <div className="p-6 max-w-4xl mx-auto">
         <div className="grid grid-cols-2 gap-4 mb-6">
-          <select className="h-12 outline-none px-4 border-borderColor border rounded text-gray-600">
-            <option disabled selected className="outline-none">
-              Product name
-            </option>
-            <option value="product1">Product 1</option>
-            <option value="product2">Product 2</option>
-          </select>
+          {/* Product Name */}
+          <div className="flex flex-col">
+            <select
+              className={`h-12 outline-none px-4 border rounded text-gray-600 ${
+                errors.productName ? 'border-red-500' : 'border-borderColor'
+              }`}
+              value={formData.productName}
+              onChange={e =>
+                setFormData({ ...formData, productName: e.target.value })
+              }
+            >
+              <option disabled value="">
+                Product name
+              </option>
+              <option value="product1">Product 1</option>
+              <option value="product2">Product 2</option>
+            </select>
+            <p className="text-red-500 text-sm inline-block min-h-[1.25rem]">
+              {errors.productName || '\u00A0'}
+            </p>
+          </div>
 
-          <input
-            type="text"
-            placeholder="$12"
-            className="h-12 px-4 border rounded text-gray-900 font-medium outline-none border-borderColor"
-            defaultValue="$12"
-          />
+          {/* Price */}
+          <div className="flex flex-col">
+            <input
+              type="text"
+              placeholder="$12"
+              className={`h-12 px-4 border rounded text-gray-900 font-medium outline-none ${
+                errors.price ? 'border-red-500' : 'border-borderColor'
+              }`}
+              value={formData.price}
+              onChange={e =>
+                setFormData({ ...formData, price: e.target.value })
+              }
+            />
+            <p className="text-red-500 text-sm inline-block min-h-[1.25rem]">
+              {errors.price || '\u00A0'}
+            </p>
+          </div>
 
-          <select className="h-12 px-4  border-borderColor outline-none border rounded text-gray-600">
-            <option disabled selected>
-              Product Category
-            </option>
-            <option value="category1">Category 1</option>
-            <option value="category2">Category 2</option>
-          </select>
+          {/* Category */}
+          <div className="flex flex-col">
+            <select
+              className={`h-12 px-4 border rounded text-gray-600 outline-none ${
+                errors.category ? 'border-red-500' : 'border-borderColor'
+              }`}
+              value={formData.category}
+              onChange={e =>
+                setFormData({ ...formData, category: e.target.value })
+              }
+            >
+              <option disabled value="">
+                Product Category
+              </option>
+              <option value="category1">Category 1</option>
+              <option value="category2">Category 2</option>
+            </select>
+            <p className="text-red-500 text-sm inline-block min-h-[1.25rem]">
+              {errors.category || '\u00A0'}
+            </p>
+          </div>
 
-          <select className="h-12 px-4 border border-borderColor outline-none rounded text-gray-600">
-            <option disabled selected>
-              Product Color
-            </option>
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-          </select>
+          {/* Color */}
+          <div className="flex flex-col">
+            <select
+              className={`h-12 px-4 border rounded text-gray-600 outline-none ${
+                errors.color ? 'border-red-500' : 'border-borderColor'
+              }`}
+              value={formData.color}
+              onChange={e =>
+                setFormData({ ...formData, color: e.target.value })
+              }
+            >
+              <option disabled value="">
+                Product Color
+              </option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+            </select>
+            <p className="text-red-500 text-sm inline-block min-h-[1.25rem]">
+              {errors.color || '\u00A0'}
+            </p>
+          </div>
 
-          <select className="h-12 px-4 border border-borderColor rounded outline-none text-gray-600">
-            <option disabled selected>
-              Product Size
-            </option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-          </select>
+          {/* Size */}
+          <div className="flex flex-col">
+            <select
+              className={`h-12 px-4 border rounded text-gray-600 outline-none ${
+                errors.size ? 'border-red-500' : 'border-borderColor'
+              }`}
+              value={formData.size}
+              onChange={e => setFormData({ ...formData, size: e.target.value })}
+            >
+              <option disabled value="">
+                Product Size
+              </option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+            <p className="text-red-500 text-sm inline-block min-h-[1.25rem]">
+              {errors.size || '\u00A0'}
+            </p>
+          </div>
 
-          <input
-            type="number"
-            placeholder="10"
-            className="h-12 px-4 border rounded text-gray-900 font-medium border-borderColor outline-none"
-            defaultValue="10"
-          />
+          {/* Quantity */}
+          <div className="flex flex-col">
+            <input
+              type="number"
+              placeholder="10"
+              className={`h-12 px-4 border rounded text-gray-900 font-medium outline-none ${
+                errors.quantity ? 'border-red-500' : 'border-borderColor'
+              }`}
+              value={formData.quantity}
+              onChange={e =>
+                setFormData({ ...formData, quantity: e.target.value })
+              }
+            />
+            <p className="text-red-500 text-sm inline-block min-h-[1.25rem]">
+              {errors.quantity || '\u00A0'}
+            </p>
+          </div>
         </div>
 
-        {/* Image Upload Buttons */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          <button className="h-12 cursor-pointer bg-slate-800 hover:bg-slate-700 text-white font-medium rounded">
-            Image Preview
-          </button>
-          <button className="h-12 cursor-pointer bg-blue-500 hover:bg-blue-600 text-white font-medium rounded">
-            Image Thumbnail
-          </button>
-        </div>
-
-        {/* Image Preview Cards */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          <div className="h-48 rounded bg-gradient-to-br from-purple-400 to-purple-600" />
-          <div className="h-48 rounded bg-slate-800" />
-        </div>
-
-        {/* Product Description */}
-        <div className="mb-8">
+        {/* Description */}
+        <div className="flex flex-col">
           <textarea
             placeholder="Product Description"
-            className="w-full min-h-[120px] p-4 border rounded text-gray-600 resize-none border-borderColor outline-none"
+            className={`w-full min-h-[120px] p-4 border rounded text-gray-600 resize-none outline-none ${
+              errors.description ? 'border-red-500' : 'border-borderColor'
+            }`}
+            value={formData.description}
+            onChange={e =>
+              setFormData({ ...formData, description: e.target.value })
+            }
           />
+          <p className="text-red-500 text-sm inline-block min-h-[1.25rem]">
+            {errors.description || '\u00A0'}
+          </p>
         </div>
 
-        {/* Additional Features */}
-        <div className="mb-8">
+        {/* Features */}
+        <div className="mt-8">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-gray-900">
               Additional Information
             </h3>
             <button
               onClick={addFeature}
-              className="bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center "
-              title="Add Feature"
+              className="bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center"
             >
-              <Link>
-                <GoPlus />
-              </Link>
+              <GoPlus />
             </button>
           </div>
 
@@ -148,24 +278,28 @@ export default function ProductUploadForm() {
                 <button
                   onClick={() => removeFeature(feature.id)}
                   className="bg-red-500 hover:bg-red-600 text-white rounded w-10 h-10 flex items-center justify-center"
-                  title="Delete"
                 >
-                  <Link>
-                    {' '}
-                    <RiDeleteBinLine />
-                  </Link>
+                  <RiDeleteBinLine />
                 </button>
               </div>
             ))}
+            {errors.features && (
+              <p className="text-red-500 text-sm inline-block min-h-[1.25rem]">
+                {errors.features}
+              </p>
+            )}
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex justify-end gap-4">
-          <button className="px-8 cursor-pointer py-3 bg-slate-800 text-white rounded hover:bg-slate-700">
+        {/* Buttons */}
+        <div className="flex justify-end gap-4 mt-8">
+          <button className="px-8 py-3 bg-slate-800 text-white rounded hover:bg-slate-700">
             Discard
           </button>
-          <button className="px-8 cursor-pointer py-3 bg-colorOne text-white rounded ">
+          <button
+            onClick={handleSubmit}
+            className="px-8 py-3 bg-colorOne text-white rounded hover:bg-colorTwo"
+          >
             Post
           </button>
         </div>

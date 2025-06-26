@@ -16,9 +16,12 @@ export const categories = [
   'Gaming',
 ];
 
-export const products = Array(13).fill({
-  img: leptop,
-  title: 'Intel Pentium G6400 10th Gen Special Deal PC',
-  price: '$12',
-  category: 'Laptop',
-});
+export const products = [
+  {
+    img: leptop,
+    title: 'Intel Pentium G6400 10th Gen Special Deal PC',
+    price: '$12',
+    category: 'Laptop',
+    description: 'Intel Pentium G6400 10th Gen Special Deal PC',
+  },
+];

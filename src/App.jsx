@@ -10,6 +10,7 @@ import Store from './pages/store';
 import Prodact from './pages/prodact';
 import Card from './pages/cart';
 import CheckOut from './pages/checkout';
+import ProductDetails from './pages/productDetails';
 
 function App() {
   const router = createBrowserRouter([
@@ -72,6 +73,10 @@ function App() {
             {
               path: 'profile/checkout',
               element: <CheckOut></CheckOut>,
+            },
+            {
+              path: 'profile/productDetails/:id',
+              element: <ProductDetails></ProductDetails>,
             },
           ],
         },
