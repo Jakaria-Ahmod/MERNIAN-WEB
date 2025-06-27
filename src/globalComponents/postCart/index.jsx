@@ -95,7 +95,7 @@ const PostCart = ({ mainPost = [], setMainPost }) => {
         mainPost.map((item, index) => (
           <div
             key={index}
-            className="w-[585px] bg-white shadow rounded-[10px] mt-[25px]"
+            className="w-[585px] bg-white shadow rounded-[10px] mb-[25px]"
           >
             {/* Header */}
             <div className="relative">
