@@ -29,30 +29,30 @@ export const DeshbordMenuData = [
     title: 'Profile',
     to: '/profile/profile',
   },
-  {
-    id: 3,
-    icon: <FaLayerGroup />,
-    title: 'Groups',
-    to: '/profile/groups',
-  },
-  {
-    id: 4,
-    icon: <FaAlgolia />,
-    title: 'Photos',
-    to: '/profile/photos',
-  },
+  // {
+  //   id: 3,
+  //   icon: <FaLayerGroup />,
+  //   title: 'Groups',
+  //   to: '/profile/groups',
+  // },
+  // {
+  //   id: 4,
+  //   icon: <FaAlgolia />,
+  //   title: 'Photos',
+  //   to: '/profile/photos',
+  // },
   {
     id: 5,
     icon: <LiaUserFriendsSolid />,
     title: 'Friends',
     to: '/profile/friends',
   },
-  {
-    id: 6,
-    icon: <IoGitPullRequest />,
-    title: 'Friends Request',
-    to: '/profile/friendsRequest',
-  },
+  // {
+  //   id: 6,
+  //   icon: <IoGitPullRequest />,
+  //   title: 'Friends Request',
+  //   to: '/profile/friendsRequest',
+  // },
   {
     id: 7,
     icon: <MdOutlineRoundaboutRight />,

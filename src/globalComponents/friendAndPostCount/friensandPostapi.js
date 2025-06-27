@@ -8,7 +8,7 @@ export const userAndPostData = [
     title: 'Posts',
   },
   {
-    number: '1k',
+    number: 999,
     title: 'Followers',
   },
 ];
